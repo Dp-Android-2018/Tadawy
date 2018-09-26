@@ -1,0 +1,110 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    >
+
+    <TextView
+        android:id="@+id/textView16"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="8dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="@dimen/dp31h"
+        android:text="@string/enter_company_names"
+        android:textColor="@color/text_color_gray"
+        android:textSize="@dimen/sp12"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/textView9"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="5dp"
+        android:text="التي لها تأمين في شركتك إن وجد"
+        android:textColor="@color/text_color_gray"
+        android:textSize="@dimen/sp12"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView16" />
+
+    <ImageView
+        android:id="@+id/name_icon"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="@dimen/dp35w"
+        android:layout_marginTop="@dimen/dp23h"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView9"
+        app:srcCompat="@mipmap/company_icon" />
+
+    <EditText
+        android:id="@+id/tv_name"
+        android:layout_width="@dimen/dp240w"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="8dp"
+        android:background="@null"
+        android:gravity="center|start"
+        android:hint="إسم الشركه"
+        android:inputType="text"
+        android:paddingEnd="5dp"
+        android:paddingStart="5dp"
+        android:textColor="@color/text_color_black"
+        android:textColorHint="@color/text_color_black"
+        android:textSize="@dimen/sp14_5"
+        app:layout_constraintBottom_toBottomOf="@+id/name_icon"
+        app:layout_constraintEnd_toStartOf="@+id/name_icon"
+        app:layout_constraintTop_toTopOf="@+id/name_icon" />
+
+    <View
+        android:id="@+id/view1"
+        android:layout_width="@dimen/dp264w"
+        android:layout_height="2dp"
+        android:layout_marginEnd="8dp"
+        android:background="@color/text_color_black"
+        app:layout_constraintEnd_toEndOf="@+id/name_icon"
+        app:layout_constraintStart_toStartOf="@+id/tv_name"
+        app:layout_constraintTop_toBottomOf="@+id/tv_name" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="5dp"
+        android:text="يمكنك اضافة أكثر من شركة"
+        android:textColor="@color/text_color_gray"
+        android:textSize="@dimen/sp12"
+        app:layout_constraintEnd_toEndOf="@+id/name_icon"
+        app:layout_constraintTop_toBottomOf="@+id/view1" />
+
+    <Button
+        android:id="@+id/button6"
+        android:layout_width="@dimen/dp139w"
+        android:layout_height="@dimen/dp26h"
+        android:layout_marginEnd="8dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="@dimen/dp30h"
+        android:background="@drawable/button_shape"
+        android:backgroundTint="@color/text_color_black"
+        android:text="إضافه"
+        android:textColor="@android:color/white"
+        android:textSize="@dimen/sp12_5"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/view1" />
+
+    <ListView
+        android:layout_width="321dp"
+        android:layout_height="304dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="44dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/button6"></ListView>
+
+
+</android.support.constraint.ConstraintLayout>

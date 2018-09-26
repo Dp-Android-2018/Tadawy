@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@android:color/white"
+    tools:context=".view.activity.PhoneActivationActivity">
+
+    <include
+        android:id="@+id/include4"
+        layout="@layout/actionbar_layout" />
+
+    <TextView
+        android:id="@+id/textView5"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/dp115h"
+        android:text="سيتم تفعيل حسابك على هذا الرقم"
+        android:textColor="@color/text_color_black"
+        android:textSize="@dimen/sp21_5"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/include4" />
+
+    <TextView
+        android:id="@+id/textView6"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="8dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="8dp"
+        android:hint="123456789"
+        android:textColor="@color/text_color_black"
+        android:textSize="@dimen/sp21_5"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView5" />
+
+    <Button
+        android:id="@+id/bt_loginactivity"
+        android:layout_width="@dimen/dp220w"
+        android:layout_height="@dimen/dp42h"
+        android:layout_marginTop="@dimen/dp54h"
+        android:background="@drawable/button_shape"
+        android:text="@string/ensure"
+        android:textColor="@android:color/white"
+        android:textSize="@dimen/sp22_5"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView6" />
+
+</android.support.constraint.ConstraintLayout>

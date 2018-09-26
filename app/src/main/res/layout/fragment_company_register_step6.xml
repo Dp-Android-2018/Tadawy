@@ -1,0 +1,154 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    >
+
+    <TextView
+        android:id="@+id/textView16"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="8dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="40dp"
+        android:text="@string/enter_social"
+        android:textColor="@color/text_color_gray"
+        android:textSize="@dimen/sp12"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.416"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/textView9"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="5dp"
+        android:text="الخاصة بشركتك"
+        android:textColor="@color/text_color_gray"
+        android:textSize="@dimen/sp12"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView16" />
+
+    <ImageView
+        android:id="@+id/name_icon"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="@dimen/dp35w"
+        android:layout_marginTop="@dimen/dp53h"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView9"
+        app:srcCompat="@mipmap/facebook_icon" />
+
+    <EditText
+        android:id="@+id/tv_name"
+        android:layout_width="@dimen/dp240w"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="8dp"
+        android:background="@null"
+        android:gravity="center|start"
+        android:hint="موقع التواصل الإجتماعي علي فيسبوك"
+        android:inputType="text"
+        android:paddingEnd="5dp"
+        android:paddingStart="5dp"
+        android:textColor="@color/text_color_black"
+        android:textColorHint="@color/text_color_black"
+        android:textSize="@dimen/sp14_5"
+        app:layout_constraintBottom_toBottomOf="@+id/name_icon"
+        app:layout_constraintEnd_toStartOf="@+id/name_icon"
+        app:layout_constraintTop_toTopOf="@+id/name_icon" />
+
+    <View
+        android:id="@+id/view1"
+        android:layout_width="@dimen/dp264w"
+        android:layout_height="2dp"
+        android:layout_marginEnd="8dp"
+        android:background="@color/text_color_black"
+        app:layout_constraintEnd_toEndOf="@+id/name_icon"
+        app:layout_constraintStart_toStartOf="@+id/tv_name"
+        app:layout_constraintTop_toBottomOf="@+id/tv_name" />
+
+    <ImageView
+        android:id="@+id/imageView13"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="@dimen/dp35w"
+        android:layout_marginTop="@dimen/dp37h"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/name_icon"
+        app:srcCompat="@mipmap/twitter_icon" />
+
+    <EditText
+        android:id="@+id/editText3"
+        android:layout_width="@dimen/dp240w"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="8dp"
+        android:layout_marginTop="8dp"
+        android:background="@null"
+        android:gravity="center|start"
+        android:hint="موقع التواصل الإجتماعي علي تويتر"
+        android:inputType="text"
+        android:paddingEnd="5dp"
+        android:paddingStart="5dp"
+        android:textColor="@color/text_color_black"
+        android:textColorHint="@color/text_color_black"
+        android:textSize="@dimen/sp14_5"
+        app:layout_constraintBottom_toBottomOf="@+id/imageView13"
+        app:layout_constraintEnd_toStartOf="@+id/imageView13"
+        app:layout_constraintTop_toTopOf="@+id/imageView13" />
+
+
+    <View
+        android:layout_width="@dimen/dp264w"
+        android:layout_height="2dp"
+        android:layout_marginEnd="4dp"
+        android:background="@color/text_color_black"
+        app:layout_constraintEnd_toEndOf="@+id/imageView13"
+        app:layout_constraintStart_toStartOf="@+id/editText3"
+        app:layout_constraintTop_toBottomOf="@+id/editText3" />
+    <ImageView
+        android:id="@+id/imageView14"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="@dimen/dp35w"
+        android:layout_marginTop="@dimen/dp37h"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/imageView13"
+        app:srcCompat="@mipmap/instagram_icon" />
+
+    <EditText
+        android:id="@+id/editText"
+        android:layout_width="@dimen/dp240w"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="8dp"
+        android:layout_marginTop="8dp"
+        android:background="@null"
+        android:gravity="center|start"
+        android:hint="موقع التواصل الإجتماعي علي إنستغرام"
+        android:inputType="text"
+        android:paddingEnd="5dp"
+        android:paddingStart="5dp"
+        android:textColor="@color/text_color_black"
+        android:textColorHint="@color/text_color_black"
+        android:textSize="@dimen/sp14_5"
+        app:layout_constraintBottom_toBottomOf="@+id/imageView14"
+        app:layout_constraintEnd_toStartOf="@+id/imageView14"
+        app:layout_constraintTop_toTopOf="@+id/imageView14" />
+
+    <View
+        android:layout_width="@dimen/dp264w"
+        android:layout_height="2dp"
+        android:layout_marginEnd="8dp"
+        android:background="@color/text_color_black"
+        app:layout_constraintEnd_toEndOf="@+id/imageView14"
+        app:layout_constraintStart_toStartOf="@+id/editText"
+        app:layout_constraintTop_toBottomOf="@+id/editText" />
+
+
+
+
+
+</android.support.constraint.ConstraintLayout>

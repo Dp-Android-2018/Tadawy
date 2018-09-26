@@ -3,4 +3,16 @@
     <color name="colorPrimary">#3F51B5</color>
     <color name="colorPrimaryDark">#303F9F</color>
     <color name="colorAccent">#FF4081</color>
+
+    <color name="bt_selected">#6bc5b4</color>
+    <color name="bt_unselected">#d3eee9</color>
+    <color name="text_color_black">#293139</color>
+    <color name="text_color_unselected">#4d293139</color>
+    <color name="image_background_color">#26000000</color>
+    <color name="phone_activation_bg">#bc6997</color>
+    <color name="text_color_gray">#c8c8c8</color>
+    <color name="text_specialization_color_">#b32e363e</color>
+    <color name="recycler_bagground_color">#ededed</color>
+
+
 </resources>
