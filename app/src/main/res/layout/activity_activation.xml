@@ -1,19 +1,36 @@
 <?xml version="1.0" encoding="utf-8"?>
+<layout>
+    <data>
+        <variable
+            name="ViewModel"
+            type="dp.com.tadawy.viewmodel.ActivationViewModel"/>
+    </data>
 <android.support.constraint.ConstraintLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".view.activity.ActivationActivity"
-    android:background="@mipmap/bg_splash">
-
-    <include
-        android:id="@+id/include3"
-        layout="@layout/actionbar_layout"
+    android:background="@drawable/bg_splash"
+    android:id="@+id/cl_root">
+    <ImageView
+        android:id="@+id/imageView7"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/dp18h"
+        android:src="@mipmap/action_bar_logo"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
+    <ImageView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/dp15w"
+        android:src="@mipmap/back_arrow"
+        android:onClick="@{ViewModel::back}"
+        app:layout_constraintBottom_toBottomOf="@+id/imageView7"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/imageView7" />
 
     <TextView
         android:id="@+id/textView2"
@@ -28,7 +45,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.406"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/include3" />
+        app:layout_constraintTop_toBottomOf="@+id/imageView7" />
 
     <TextView
         android:id="@+id/textView3"
@@ -39,7 +56,7 @@
         android:layout_marginTop="8dp"
         android:text="عن طريق البريد الإلكترونى الخاص بك"
         android:textColor="@android:color/white"
-        android:textSize="@dimen/sp21_5"
+        android:textSize="@dimen/sp20"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textView2" />
@@ -69,7 +86,8 @@
         android:textSize="@dimen/sp20"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/imageView6" />
+        app:layout_constraintTop_toBottomOf="@+id/imageView6"
+        android:onClick="@{ViewModel::sendMail}"/>
 
     <Button
         android:layout_width="match_parent"
@@ -79,10 +97,7 @@
         android:text="@string/phone_activation"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent" />
-
-
-
-
-
+        app:layout_constraintStart_toStartOf="parent"
+        android:onClick="@{ViewModel::phoneActivation}"/>
 </android.support.constraint.ConstraintLayout>
+</layout>

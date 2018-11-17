@@ -1,0 +1,62 @@
+{
+  "project_info": {
+    "project_number": "14076206135",
+    "firebase_url": "https://tadawy-52d7f.firebaseio.com",
+    "project_id": "tadawy-52d7f",
+    "storage_bucket": "tadawy-52d7f.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:14076206135:android:086cc3bbc5c1efd7",
+        "android_client_info": {
+          "package_name": "dp.com.tadawy"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "14076206135-a5mstlkovmm3abc0ui8t4v5jcmnfeohi.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "dp.com.tadawy",
+            "certificate_hash": "07096b2ff29e75ba5ecceacb8d4b7b363b24ce16"
+          }
+        },
+        {
+          "client_id": "14076206135-1gm9033v57kb312h30q0toi657tqs96f.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAH03oVMIYv5RDHDr12ZW-hf5_dGt5njVc"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 2,
+          "other_platform_oauth_client": [
+            {
+              "client_id": "14076206135-1gm9033v57kb312h30q0toi657tqs96f.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "14076206135-rmb58lq4umvef284srhmjl100j52iguk.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "com.dp-itc.tdawy-ios"
+              }
+            }
+          ]
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

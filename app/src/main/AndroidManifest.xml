@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
-<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+<manifest
+    xmlns:android="http://schemas.android.com/apk/res/android"
     package="dp.com.tadawy">
 
     <!--
@@ -8,38 +9,72 @@
          location permissions for the 'MyLocation' functionality. 
     -->
     <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE"/>
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
+
 
     <application
         android:allowBackup="true"
-        android:icon="@mipmap/ic_launcher"
+        android:hardwareAccelerated="false"
+        android:icon="@mipmap/tadawy_logo"
         android:label="@string/app_name"
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
-        android:theme="@style/AppTheme">
+        android:largeHeap="true"
+        android:theme="@style/AppTheme.NoActionBar">
         <activity
             android:name=".view.activity.MainActivity"
-            android:theme="@style/AppTheme.NoActionBar" />
+             android:screenOrientation="portrait">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
         <activity
             android:name=".view.activity.LoginActivity"
-            android:theme="@style/AppTheme.NoActionBar" />
+             android:screenOrientation="portrait"/>
         <activity
             android:name=".view.activity.ClientRegisterStep1Activity"
-            android:theme="@style/AppTheme.NoActionBar" />
+             android:screenOrientation="portrait"/>
         <activity
             android:name=".view.activity.ClientRegisterStep2Activity"
-            android:theme="@style/AppTheme.NoActionBar" />
+             android:screenOrientation="portrait"/>
+        <activity android:name=".view.activity.CityActivity"
+            android:screenOrientation="portrait"/>
+        <activity android:name=".view.activity.CountryActivity"
+            android:screenOrientation="portrait"/>
         <activity
             android:name=".view.activity.ActivationActivity"
-            android:theme="@style/AppTheme.NoActionBar" />
+             android:screenOrientation="portrait"/>
         <activity
             android:name=".view.activity.PhoneActivationActivity"
-            android:theme="@style/AppTheme.NoActionBar" />
+             android:screenOrientation="portrait"/>
         <activity
             android:name=".view.activity.ActivationCodeActivity"
-            android:theme="@style/AppTheme.NoActionBar" />
+             android:screenOrientation="portrait"/>
         <activity
-            android:name=".view.activity.CompanyRegisterActivity"
-            android:theme="@style/AppTheme.NoActionBar"></activity>
+            android:name=".view.activity.CompanyRegisterStep1Activity"
+             android:screenOrientation="portrait"/>
+        <activity android:name=".view.activity.CompanyRegisterStep2Activity"
+            android:screenOrientation="portrait"/>
+        <activity android:name=".view.activity.CompanyRegisterStep3Activity"
+            android:screenOrientation="portrait"/>
+        <activity android:name=".view.activity.CompanyRegisterStep4Activity"
+            android:screenOrientation="portrait"/>
+        <activity android:name=".view.activity.CompanyRegisterStep5Activity"
+            android:screenOrientation="portrait"/>
+        <activity android:name=".view.activity.CompanyRegisterStep6Activity"
+            android:screenOrientation="portrait"/>
+        <activity android:name=".view.activity.CompanyRegisterStep7Activity"
+            android:screenOrientation="portrait">
+        </activity>
+        <activity android:name=".view.activity.CompanyRegisterStep8Activity"
+            android:screenOrientation="portrait"/>
+        <activity android:name=".view.activity.SpecializationActivity"
+            android:screenOrientation="portrait"/>
         <!--
              The API key for Google Maps-based APIs is defined as a string resource.
              (See the file "res/values/google_maps_api.xml").
@@ -54,19 +89,54 @@
 
         <activity
             android:name=".view.activity.MapsActivity"
-            android:label="@string/title_activity_maps" />
+            android:label="@string/title_activity_maps"
+            android:screenOrientation="portrait"/>
         <activity
             android:name=".view.activity.ConnectTeamWorkActivity"
-            android:theme="@style/AppTheme.NoActionBar">
-        </activity>
-        <activity android:name=".view.activity.ContainerActivity"
-            android:theme="@style/AppTheme.NoActionBar">
+             android:screenOrientation="portrait"/>
+        <activity
+            android:name=".view.activity.ContainerActivity"
+            android:screenOrientation="portrait"/>
+        <activity
+            android:name=".view.activity.DetailedActivity"
+             android:screenOrientation="portrait"/>
+        <activity android:name=".view.activity.ReservationActivity"
+            android:screenOrientation="portrait"/>
+        <activity android:name=".view.activity.RequestActivity"
+            android:screenOrientation="portrait"/>
+        <activity android:name=".view.activity.DataActivity"
+            android:screenOrientation="portrait"/>
+        <activity android:name=".view.activity.AnthorPatientActivity"
+            android:screenOrientation="portrait"/>
+        <activity android:name=".view.activity.ForgetPasswordActivity"
+            android:screenOrientation="portrait"/>
+        <activity android:name=".view.activity.ChangePasswordActivity"
+            android:screenOrientation="portrait"/>
+        <activity android:name=".view.activity.DetailItemApproveRequestActivity"
+            android:screenOrientation="portrait"/>
+        <activity android:name=".view.activity.PendRequestDetailActivity"
+            android:screenOrientation="portrait"/>
+        <activity android:name=".view.activity.NoInternetConnectionActivity"
+            android:screenOrientation="portrait"/>
+        <receiver android:name=".pojo.model.ConnectionReceiver">
             <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
-
-                <category android:name="android.intent.category.LAUNCHER" />
+                <action android:name="android.net.conn.CONNECTIVITY_CHANGE"/>
             </intent-filter>
-        </activity>
+        </receiver>
+
+        <service
+            android:name=".notification.MyFirebaseInstanceIdService">
+            <intent-filter>
+                <action android:name="com.google.firebase.INSTANCE_ID_EVENT"/>
+            </intent-filter>
+        </service>
+
+        <service
+            android:name=".notification.FirebaseMessageService">
+            <intent-filter>
+                <action android:name="com.google.firebase.MESSAGING_EVENT"/>
+            </intent-filter>
+        </service>
     </application>
 
 </manifest>

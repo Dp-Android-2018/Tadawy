@@ -1,0 +1,179 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    xmlns:bind="http://schemas.android.com/apk/res-auto">
+    <data>
+        <variable
+            name="ViewModel"
+            type="dp.com.tadawy.viewmodel.ClinicDataViewModel"/>
+    </data>
+<android.support.constraint.ConstraintLayout
+    android:id="@+id/cl_root"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <ImageView
+        android:id="@+id/imageView15"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/dp102h"
+        android:src="@mipmap/white_bar"
+        android:scaleType="centerCrop"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <ImageView
+        android:id="@+id/imageView16"
+        android:layout_width="@dimen/dp77w"
+        android:layout_height="@dimen/dp16h"
+        android:layout_marginTop="@dimen/dp18h"
+        android:src="@mipmap/action_bar_logo"
+        app:layout_constraintBottom_toBottomOf="@+id/imageView15"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.501"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/imageView15"
+        app:layout_constraintVertical_bias="0.0" />
+    <ImageView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/dp15w"
+        android:src="@mipmap/back_arrow_black"
+        android:onClick="@{ViewModel::back}"
+        app:layout_constraintBottom_toBottomOf="@+id/imageView16"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/imageView16"/>
+
+    <me.crosswall.lib.coverflow.core.PagerContainer
+        android:id="@+id/pager_container"
+        android:layout_width="0dp"
+        android:layout_height="@dimen/dp120h"
+        app:layout_constraintBottom_toTopOf="@+id/textView41"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/imageView16"
+        android:layout_marginTop="12dp">
+        <!--android:layout_height="@dimen/dp108h"-->
+        <android.support.v4.view.ViewPager
+            android:layout_width="@dimen/dp227w"
+            android:layout_height="match_parent"
+            android:layout_gravity="center" />
+    </me.crosswall.lib.coverflow.core.PagerContainer>
+
+    <ImageView
+        android:id="@+id/imageView8"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginBottom="8dp"
+        android:visibility="@{ViewModel.dataImageVisability}"
+        android:src="@drawable/no_data"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/pager_container" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:text="لا يوجد بيانات"
+        android:visibility="@{ViewModel.dataImageVisability}"
+        android:gravity="center"
+        android:textColor="@color/text_color_no_data"
+        android:textSize="@dimen/sp20"
+        app:layout_constraintEnd_toEndOf="@+id/imageView8"
+        app:layout_constraintStart_toStartOf="@+id/imageView8"
+        app:layout_constraintTop_toBottomOf="@+id/imageView8" />
+    <TextView
+        android:id="@+id/textView41"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="8dp"
+        android:layout_marginTop="16dp"
+        android:text="@{ViewModel.title}"
+        android:textColor="@color/black_color_50opacity"
+        android:textSize="@dimen/sp16_5"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/pager_container"/>
+
+    <ImageView
+        android:id="@+id/iv_linear"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="8dp"
+        android:layout_marginEnd="@dimen/dp11w"
+        android:src="@{ViewModel.linearOrGrid==0?@drawable/linear_icon_clicked:@drawable/linear_icon}"
+        app:layout_constraintBottom_toBottomOf="@+id/textView41"
+        app:layout_constraintEnd_toStartOf="@+id/textView41"
+        app:layout_constraintTop_toTopOf="@+id/textView41"
+        app:layout_constraintVertical_bias="1.0"
+        android:onClick="@{ViewModel::selectLinearView}"/>
+    <ImageView
+        android:id="@+id/imageView26"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="@dimen/dp9w"
+        android:onClick="@{ViewModel::selectGridView}"
+        android:src="@{ViewModel.linearOrGrid==1?@drawable/grid_icon_clicked:@drawable/grid_icon}"
+        app:layout_constraintBottom_toBottomOf="@+id/iv_linear"
+        app:layout_constraintEnd_toStartOf="@+id/iv_linear"
+        app:layout_constraintTop_toTopOf="@+id/iv_linear"
+        app:layout_constraintVertical_bias="0.0"/>
+
+    <android.support.v7.widget.RecyclerView
+        android:id="@+id/rv"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginBottom="8dp"
+        android:background="@android:color/white"
+        android:visibility="@{ViewModel.linearVisibility}"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView41"
+        app:layout_constraintVertical_bias="1.0"
+        bind:clinicInfo="@{ViewModel.searchResponse}"
+        bind:recyclerListener="@{ViewModel.onScrollListener()}"
+        tools:listitem="@layout/clinic_list_item" />
+
+    <android.support.v7.widget.RecyclerView
+        android:id="@+id/rv_grid"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginStart="24dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginBottom="8dp"
+        android:background="@android:color/white"
+        android:visibility="@{ViewModel.gridVisibility}"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView41"
+        app:layout_constraintVertical_bias="1.0"
+        bind:clinicInfoGrid="@{ViewModel.searchResponse}"
+        bind:recyclerListener="@{ViewModel.onScrollListener()}"
+        tools:listitem="@layout/grid_item_layout" />
+
+    <android.support.design.widget.FloatingActionButton
+        android:id="@+id/fab_add_topic"
+        android:layout_width="@dimen/dp50w"
+        android:layout_height="@dimen/dp50h"
+        android:layout_marginEnd="@dimen/dp18w"
+        android:layout_marginBottom="@dimen/dp18w"
+        android:src="@mipmap/filter"
+        app:backgroundTint="@color/text_color_sky"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:elevation="5dp"
+        android:onClick="@{ViewModel::filter}"/>
+</android.support.constraint.ConstraintLayout>
+</layout>

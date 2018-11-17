@@ -1,7 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <layout xmlns:tools="http://schemas.android.com/tools"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:android="http://schemas.android.com/apk/res/android">
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:bind="http://schemas.android.com/apk/res-auto">
     <data>
         <variable
             name="ClientRegisterStep1ViewModel"
@@ -9,17 +10,16 @@
     </data>
 
 <android.support.constraint.ConstraintLayout
+    android:id="@+id/cl_root"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@android:color/white">
-
     <include
-        android:id="@+id/include"
+        android:id="@+id/action_bar"
         layout="@layout/actionbar_layout"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
-
     <de.hdodenhof.circleimageview.CircleImageView
         android:id="@+id/circleImageView2"
         android:layout_width="@dimen/dp89w"
@@ -28,11 +28,13 @@
         android:layout_marginStart="8dp"
         android:layout_marginTop="@dimen/dp24h"
         android:background="@drawable/image_background"
-        android:padding="@dimen/dp15w"
+        android:padding="@dimen/dp5w"
         android:src="@mipmap/image_add_button"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/include" />
+        app:layout_constraintTop_toBottomOf="@+id/action_bar"
+        bind:bitmap="@{ClientRegisterStep1ViewModel.picBitmap}"
+        android:onClick="@{ClientRegisterStep1ViewModel::uploadImage}" />
 
     <ImageView
         android:id="@+id/name_icon"
@@ -52,6 +54,7 @@
         android:background="@null"
         android:gravity="center|start"
         android:hint="@string/full_name"
+        android:text="@={ClientRegisterStep1ViewModel.name}"
         android:inputType="text"
         android:paddingEnd="5dp"
         android:paddingStart="5dp"
@@ -89,6 +92,7 @@
         android:layout_marginEnd="8dp"
         android:background="@null"
         android:gravity="center|start"
+        android:text="@={ClientRegisterStep1ViewModel.mail}"
         android:hint="@string/email"
         android:inputType="textEmailAddress"
         android:paddingEnd="5dp"
@@ -128,6 +132,7 @@
         android:layout_marginEnd="8dp"
         android:background="@null"
         android:gravity="center|start"
+        android:text="@={ClientRegisterStep1ViewModel.password}"
         android:hint="@string/password"
         android:inputType="textPassword"
         android:paddingEnd="5dp"
@@ -166,6 +171,7 @@
         android:layout_marginEnd="8dp"
         android:background="@null"
         android:gravity="center|start"
+        android:text="@={ClientRegisterStep1ViewModel.passwordConfirmation}"
         android:hint="@string/passwor_confierm"
         android:inputType="textPassword"
         android:paddingEnd="5dp"
@@ -199,10 +205,7 @@
         android:textSize="@dimen/sp22_5"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/view4" />
-
-
-
-
+        app:layout_constraintTop_toBottomOf="@+id/view4"
+        android:onClick="@{ClientRegisterStep1ViewModel::checkData}"/>
 </android.support.constraint.ConstraintLayout>
 </layout>

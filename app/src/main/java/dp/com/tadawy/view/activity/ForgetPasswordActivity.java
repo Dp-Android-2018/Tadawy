@@ -1,0 +1,51 @@
+package dp.com.tadawy.view.activity;
+
+import android.databinding.DataBindingUtil;
+import android.os.Bundle;
+import android.support.annotation.Nullable;
+import android.support.design.widget.Snackbar;
+import android.support.v7.app.AppCompatActivity;
+
+import dp.com.tadawy.R;
+import dp.com.tadawy.databinding.ActivityForgetPasswordBinding;
+import dp.com.tadawy.utils.ConfigurationFile;
+import dp.com.tadawy.view.callback.BaseInterface;
+import dp.com.tadawy.viewmodel.ActionBarViewModel;
+import dp.com.tadawy.viewmodel.ForgetPasswordViewModel;
+
+public class ForgetPasswordActivity extends BaseActivity implements BaseInterface {
+    private ForgetPasswordViewModel viewModel;
+    private ActivityForgetPasswordBinding binding;
+
+    @Override
+    protected void onCreate(@Nullable Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        viewModel=new ForgetPasswordViewModel(ForgetPasswordActivity.this,this);
+        binding=DataBindingUtil.setContentView(ForgetPasswordActivity.this,R.layout.activity_forget_password);
+        binding.setViewModel(viewModel);
+        binding.actionBar.setViewModel(new ActionBarViewModel(ForgetPasswordActivity.this));
+    }
+
+    @Override
+    public void updateUi(int code) {
+        switch (code){
+            case ConfigurationFile.Constants.FILL_ALL_DATA_ERROR:{
+                Snackbar.make(binding.clRoot,R.string.fill_data,Snackbar.LENGTH_LONG).show();
+                break;
+            }
+            case ConfigurationFile.Constants.NO_INTERNET_CONNECTION_CODE:{
+                Snackbar.make(binding.clRoot,R.string.no_internet_error_message,Snackbar.LENGTH_LONG).show();
+                break;
+            }
+            case ConfigurationFile.Constants.SUCCESS_CODE:{
+                Snackbar.make(binding.clRoot,"تم الإرسال إالي البريد الإلكتروني",Snackbar.LENGTH_LONG).show();
+                break;
+            }
+            case ConfigurationFile.Constants.INVALED_DATA_CODE:{
+                Snackbar.make(binding.clRoot,"البريد الإلكتروني غير صالح",Snackbar.LENGTH_LONG).show();
+                break;
+            }
+        }
+
+    }
+}

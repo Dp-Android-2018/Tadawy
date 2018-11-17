@@ -11,14 +11,15 @@
 <android.support.constraint.ConstraintLayout
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@android:color/white">
+    android:background="@android:color/white"
+    android:id="@+id/cl_root">
 
     <ImageView
         android:id="@+id/imageView15"
         android:layout_width="match_parent"
         android:layout_height="@dimen/dp102h"
         android:src="@mipmap/white_bar"
-        android:scaleType="centerCrop"
+        android:scaleType="fitXY"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintStart_toStartOf="parent"
@@ -39,26 +40,25 @@
 
     <FrameLayout
         android:id="@+id/frame"
-        android:layout_width="@dimen/dp267w"
-        android:layout_height="@dimen/dp367h"
-        android:layout_marginTop="@dimen/dp36h"
-        android:background="@color/text_color_black"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_marginTop="@dimen/dp18h"
+        android:background="@android:color/transparent"
         app:layout_constraintBottom_toTopOf="@+id/bottomBar"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.507"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/imageView16"/>
+        app:layout_constraintTop_toBottomOf="@+id/imageView16"
+        app:layout_constraintVertical_bias="0.19" />
 
     <com.roughike.bottombar.BottomBar
         android:id="@+id/bottomBar"
         android:layout_width="match_parent"
         android:layout_height="60dp"
-        app:bb_activeTabColor="@color/text_color_black"
+        app:bb_activeTabColor="@color/text_color_sky"
         app:bb_tabXmlResource="@xml/bottombar_tabs"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent" />
-
 
 </android.support.constraint.ConstraintLayout>
 </layout>

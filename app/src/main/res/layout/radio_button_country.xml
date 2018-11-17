@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout
+    xmlns:android="http://schemas.android.com/apk/res/android">
+    <data>
+        <variable
+            name="ItemCountryViewModel"
+            type="dp.com.tadawy.viewmodel.ItemCountryViewModel"/>
+    </data>
+<android.support.constraint.ConstraintLayout
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/cl_root"
+    android:layout_width="match_parent"
+    android:layout_height="@dimen/dp28h"
+    android:onClick="@{ItemCountryViewModel::onItemClick}">
+
+    <RadioButton
+        android:id="@+id/radioButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:button="@null"
+        android:drawableRight="@android:drawable/btn_radio"
+        android:drawablePadding="5dp"
+        android:padding="5dp"
+        android:layout_marginBottom="3dp"
+        android:gravity="center"
+        android:text="@{ItemCountryViewModel.name}"
+        android:textColor="@color/text_color_black"
+        android:textSize="@dimen/sp9"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <View
+        android:id="@+id/view15"
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:background="@color/view_back_ground"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+</android.support.constraint.ConstraintLayout>
+</layout>

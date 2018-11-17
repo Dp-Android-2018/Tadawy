@@ -10,6 +10,7 @@
     </data>
 
 <android.support.constraint.ConstraintLayout
+    android:id="@+id/cl_root"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@android:color/white">
@@ -32,6 +33,7 @@
         android:layout_marginStart="8dp"
         android:layout_marginTop="8dp"
         android:background="@null"
+        android:text="@={LoginViewModel.mail}"
         android:gravity="center|start"
         android:hint="@string/email"
         android:inputType="textEmailAddress"
@@ -78,6 +80,7 @@
         android:layout_marginStart="@dimen/dp13w"
         android:layout_marginTop="8dp"
         android:background="@null"
+        android:text="@={LoginViewModel.password}"
         android:gravity="center|start"
         android:hint="@string/password"
         android:inputType="textPassword"
@@ -114,6 +117,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         android:textColor="@android:color/white"
         android:textSize="@dimen/sp22_5"
+        android:onClick="@{LoginViewModel::checkData}"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/view" />
 
@@ -126,7 +130,8 @@
         android:textSize="@dimen/sp11"
         app:layout_constraintEnd_toEndOf="@+id/bt_loginactivity"
         app:layout_constraintStart_toStartOf="@+id/bt_loginactivity"
-        app:layout_constraintTop_toBottomOf="@+id/bt_loginactivity" />
+        app:layout_constraintTop_toBottomOf="@+id/bt_loginactivity"
+        android:onClick="@{LoginViewModel::forgetPassword}"/>
 
 
 </android.support.constraint.ConstraintLayout>

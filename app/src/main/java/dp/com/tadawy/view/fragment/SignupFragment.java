@@ -1,6 +1,5 @@
 package dp.com.tadawy.view.fragment;
 
-import android.arch.lifecycle.ViewModelProviders;
 import android.databinding.DataBindingUtil;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
@@ -22,8 +21,7 @@ public class SignupFragment extends Fragment {
     @Nullable
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
-        signupViewModel= ViewModelProviders
-                .of(this).get(SignupViewModel.class);
+        signupViewModel=new SignupViewModel(getContext());
         signupBinding= DataBindingUtil.inflate(inflater, R.layout.fragment_signup,container,false);
         signupBinding.setSignupViewModel(signupViewModel);
         View view=signupBinding.getRoot();

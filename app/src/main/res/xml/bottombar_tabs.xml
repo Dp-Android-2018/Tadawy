@@ -14,10 +14,6 @@
         icon="@drawable/search_selector"
         title="الرئيسيه" />
     <tab
-        id="@+id/notification"
-        icon="@drawable/notification_selector"
-        title="التنبيهات"/>
-    <tab
         id="@+id/settings"
         icon="@drawable/setting_selectior"
         title="الإعدادات"/>

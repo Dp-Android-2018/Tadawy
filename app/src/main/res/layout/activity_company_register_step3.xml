@@ -1,0 +1,248 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+    <data>
+        <variable
+            name="ViewModel"
+            type="dp.com.tadawy.viewmodel.CompanyRegisterStep3ViewModel"/>
+    </data>
+
+    <android.support.constraint.ConstraintLayout
+        android:id="@+id/cl_root"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@drawable/bg_splash">
+
+        <ImageView
+            android:id="@+id/imageView7"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/dp18h"
+            android:src="@mipmap/action_bar_logo"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/dp15w"
+            android:onClick="@{ViewModel::back}"
+            android:src="@mipmap/back_arrow"
+            app:layout_constraintBottom_toBottomOf="@+id/imageView7"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="@+id/imageView7" />
+
+        <include
+            android:id="@+id/counter"
+            layout="@layout/company_register_counter"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/dp18h"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/imageView7" />
+
+        <Button
+            android:id="@+id/button4"
+            android:layout_width="@dimen/dp297w"
+            android:layout_height="@dimen/dp35h"
+            android:layout_gravity="bottom"
+            android:background="@drawable/button_next_company_register"
+            android:onClick="@{ViewModel::next}"
+            android:text="@string/next"
+            android:textColor="@android:color/white"
+            android:textSize="@dimen/sp22_5"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/view17" />
+
+        <View
+            android:id="@+id/view17"
+            android:layout_width="@dimen/dp297w"
+            android:layout_height="@dimen/dp383h"
+            android:layout_marginStart="8dp"
+            android:layout_marginEnd="8dp"
+            android:background="@android:color/white"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/counter" />
+
+        <TextView
+            android:id="@+id/textView9"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/dp22h"
+            android:text="@string/company_location"
+            android:textColor="@color/text_color_gray"
+            android:textSize="@dimen/sp12"
+            app:layout_constraintEnd_toEndOf="@+id/view17"
+            app:layout_constraintHorizontal_bias="0.504"
+            app:layout_constraintStart_toStartOf="@+id/view17"
+            app:layout_constraintTop_toBottomOf="@+id/counter" />
+
+        <ImageView
+            android:id="@+id/mail_icon"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/dp26h"
+            android:layout_marginEnd="@dimen/dp35w"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/textView9"
+            app:srcCompat="@mipmap/location_icon" />
+
+        <TextView
+            android:id="@+id/tv_country"
+            android:layout_width="@dimen/dp240w"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="8dp"
+            android:background="@null"
+            android:gravity="center|start"
+            android:hint="@string/country"
+            android:onClick="@{ViewModel::getCountries}"
+            android:paddingStart="5dp"
+            android:paddingEnd="5dp"
+            android:text="@{ViewModel.countryName}"
+            android:textColor="@color/text_color_black"
+            android:textColorHint="@color/text_color_black"
+            android:textSize="@dimen/sp14_5"
+            app:layout_constraintBottom_toBottomOf="@+id/mail_icon"
+            app:layout_constraintEnd_toStartOf="@+id/mail_icon"
+            app:layout_constraintTop_toTopOf="@+id/mail_icon" />
+
+        <View
+            android:id="@+id/view2"
+            android:layout_width="@dimen/dp264w"
+            android:layout_height="2dp"
+            android:layout_marginEnd="8dp"
+            android:background="@color/text_color_black"
+            app:layout_constraintEnd_toEndOf="@+id/mail_icon"
+            app:layout_constraintStart_toStartOf="@+id/tv_country"
+            app:layout_constraintTop_toBottomOf="@+id/tv_country" />
+
+
+        <ImageView
+            android:id="@+id/pass_icon"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/dp45h"
+            android:layout_marginEnd="@dimen/dp35w"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/mail_icon"
+            app:srcCompat="@mipmap/location_icon" />
+
+        <TextView
+            android:id="@+id/tv_city"
+            android:layout_width="@dimen/dp240w"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="8dp"
+            android:background="@null"
+            android:gravity="center|start"
+            android:hint="@string/city"
+            android:onClick="@{ViewModel::getCities}"
+            android:paddingStart="5dp"
+            android:paddingEnd="5dp"
+            android:text="@{ViewModel.cityName}"
+            android:textColor="@color/text_color_black"
+            android:textColorHint="@color/text_color_black"
+            android:textSize="@dimen/sp14_5"
+            app:layout_constraintBottom_toBottomOf="@+id/pass_icon"
+            app:layout_constraintEnd_toStartOf="@+id/pass_icon"
+            app:layout_constraintTop_toTopOf="@+id/pass_icon" />
+
+        <View
+            android:id="@+id/view3"
+            android:layout_width="@dimen/dp264w"
+            android:layout_height="2dp"
+            android:layout_marginEnd="8dp"
+            android:background="@color/text_color_black"
+            app:layout_constraintEnd_toEndOf="@+id/pass_icon"
+            app:layout_constraintStart_toStartOf="@+id/tv_city"
+            app:layout_constraintTop_toBottomOf="@+id/tv_city" />
+
+        <Button
+            android:id="@+id/button5"
+            android:layout_width="@dimen/dp220w"
+            android:layout_height="@dimen/dp27h"
+            android:layout_marginTop="@dimen/dp40h"
+            android:background="@drawable/button_shape"
+            android:backgroundTint="@color/text_color_black"
+            android:onClick="@{ViewModel::getLocation}"
+            android:text="حدد موقع شركتك علي الخريطة"
+            android:textColor="@android:color/white"
+            android:textSize="@dimen/sp12"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/view3" />
+
+        <ImageView
+            android:id="@+id/imageView11"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/dp29h"
+            android:layout_marginEnd="36dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/view21"
+            app:srcCompat="@mipmap/type_icon" />
+
+        <TextView
+            android:id="@+id/textView14"
+            android:layout_width="@dimen/dp240w"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="8dp"
+            android:background="@null"
+            android:gravity="center|start"
+            android:hint="@string/specialization"
+            android:text="@{ViewModel.specializationName}"
+            android:paddingStart="5dp"
+            android:paddingEnd="5dp"
+            android:textColor="@color/text_color_black"
+            android:textColorHint="@color/text_color_black"
+            android:textSize="@dimen/sp14_5"
+            app:layout_constraintBottom_toBottomOf="@+id/imageView11"
+            app:layout_constraintEnd_toStartOf="@+id/imageView11"
+            app:layout_constraintTop_toTopOf="@+id/imageView11"
+            android:onClick="@{ViewModel::getSpecialization}"/>
+        <View
+
+            android:id="@+id/view5"
+            android:layout_width="@dimen/dp264w"
+            android:layout_height="2dp"
+            android:layout_marginEnd="8dp"
+            android:background="@color/text_color_black"
+            app:layout_constraintEnd_toEndOf="@+id/imageView11"
+            app:layout_constraintStart_toStartOf="@+id/textView14"
+            app:layout_constraintTop_toBottomOf="@+id/textView14" />
+
+        <TextView
+            android:id="@+id/textView15"
+            android:layout_width="@dimen/dp240w"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:background="@null"
+            android:gravity="center|start"
+            android:hint="العنوان بالتفصيل"
+            android:paddingStart="5dp"
+            android:paddingEnd="5dp"
+            android:text="@{ViewModel.address}"
+            android:textColor="@color/text_color_black"
+            android:textColorHint="@color/text_color_black"
+            android:textSize="@dimen/sp14_5"
+            app:layout_constraintEnd_toEndOf="@+id/textView14"
+            app:layout_constraintStart_toStartOf="@+id/textView14"
+            app:layout_constraintTop_toBottomOf="@+id/button5" />
+
+        <View
+            android:id="@+id/view21"
+            android:layout_width="@dimen/dp264w"
+            android:layout_height="2dp"
+            android:background="@color/text_color_black"
+            app:layout_constraintEnd_toEndOf="@+id/textView15"
+            app:layout_constraintStart_toStartOf="@+id/textView15"
+            app:layout_constraintTop_toBottomOf="@+id/textView15" />
+
+
+    </android.support.constraint.ConstraintLayout>
+</layout>

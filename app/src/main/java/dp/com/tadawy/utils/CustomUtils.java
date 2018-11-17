@@ -14,15 +14,23 @@ import android.graphics.drawable.ColorDrawable;
 import android.media.ExifInterface;
 import android.net.Uri;
 import android.provider.MediaStore;
+import android.support.annotation.NonNull;
 import android.support.v4.app.ActivityCompat;
 import android.support.v7.app.AlertDialog;
 import android.util.Base64;
+import android.util.Log;
 import android.view.View;
 import android.view.Window;
 import android.widget.Button;
 import android.widget.TimePicker;
 
 
+import com.google.android.gms.tasks.Continuation;
+import com.google.android.gms.tasks.OnCompleteListener;
+import com.google.android.gms.tasks.OnFailureListener;
+import com.google.android.gms.tasks.OnSuccessListener;
+import com.google.android.gms.tasks.Task;
+import com.google.firebase.FirebaseApp;
 import com.google.firebase.storage.StorageReference;
 import com.google.firebase.storage.UploadTask;
 
@@ -32,6 +40,11 @@ import java.util.Calendar;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 import dp.com.tadawy.R;
+import dp.com.tadawy.notification.MyFirebaseInstanceIdService;
+import dp.com.tadawy.pojo.model.LoginResponseContent;
+import dp.com.tadawy.view.callback.TaskMonitor;
+
+import static android.support.constraint.Constraints.TAG;
 
 
 /**
@@ -118,7 +131,6 @@ public class CustomUtils {
     }
 
 
-
     public  boolean checkIfAlreadyhavePermission(Context context, String permission) {
         if (ActivityCompat.checkSelfPermission(context, permission) == PackageManager.PERMISSION_GRANTED) {
             return true;
@@ -142,6 +154,26 @@ public class CustomUtils {
         return (m.find() && m.group().equals(s));
     }
 
+    public void showProgressDialog(Context activity){
+        dialog = new Dialog(activity);
+        dialog.requestWindowFeature(Window.FEATURE_NO_TITLE);
+        dialog.setContentView(R.layout.custom_dialog_layout);
+        dialog.getWindow().setBackgroundDrawable(new ColorDrawable(android.graphics.Color.TRANSPARENT));
+        dialog.setCancelable(false);
+        if (!dialog.isShowing())
+            dialog.show();
+    }
+
+    public void cancelDialog(){
+        dialog.dismiss();
+    }
+
+    public LoginResponseContent getSaveUserObject(Context context){
+
+        SharedPrefrenceUtils prefrenceUtils=new SharedPrefrenceUtils(context);
+        LoginResponseContent userData=(LoginResponseContent) prefrenceUtils.getSavedObject(ConfigurationFile.SharedPrefConstants.SHARED_PREF_NAME, LoginResponseContent.class);
+        return userData;
+    }
 
 
     public void openCamera(Activity activity){
@@ -188,17 +220,22 @@ public class CustomUtils {
         context.startActivity(Intent.createChooser(sendIntent,"Send To"));
     }
 
-   /* public void uploadFireBasePic(StorageReference storageReference, Uri selectedImageUri , TaskMonitor callback){
-
+    public void uploadFireBasePic(StorageReference storageReference, Uri selectedImageUri , TaskMonitor callback){
         final UploadTask photoRef=storageReference.child(selectedImageUri.getLastPathSegment()).putFile(selectedImageUri);
         photoRef.addOnSuccessListener(taskSnapshot -> {
-            Uri photourl=taskSnapshot.getDownloadUrl();
-            callback.taskCompleted(photourl.toString());
-            System.out.println("Activity Result View Model Url :"+photourl.toString());});
-
-        photoRef.addOnProgressListener(taskSnapshot -> {
+            (taskSnapshot.getMetadata().getReference().getDownloadUrl()).addOnSuccessListener(new OnSuccessListener<Uri>() {
+                @Override
+                public void onSuccess(Uri uri) {
+                    callback.taskCompleted(uri.toString());
+                    System.out.println("Activity Result View Model Url :"+uri);
+                }
+            });
         });
-    }*/
+        photoRef.addOnFailureListener(e ->
+                System.out.println("ERROR UPLOADING :"+e.getMessage()));
+
+
+    }
 
 
     public void clearSharedPref(Context context){
@@ -208,13 +245,13 @@ public class CustomUtils {
 
 
 
- /*   public String getFirebaseToken(Context context){
+    public String getFirebaseToken(Context context){
         final MyFirebaseInstanceIdService mfs=new MyFirebaseInstanceIdService();
         FirebaseApp.initializeApp(context);
       //  zzahn.runOnUiThread(() -> mfs.onTokenRefresh());
         mfs.onTokenRefresh();
         return MyFirebaseInstanceIdService.TOKEN;
-    }*/
+    }
 
 
 }

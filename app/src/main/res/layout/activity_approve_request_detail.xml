@@ -1,0 +1,121 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout>
+    <data>
+        <variable
+            name="ViewModel"
+            type="dp.com.tadawy.viewmodel.RequestViewModel"/>
+    </data>
+<android.support.constraint.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+    <ImageView
+        android:id="@+id/imageView20"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/dp127h"
+        android:scaleType="fitXY"
+        android:src="@mipmap/white_bar"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+    <ImageView
+        android:id="@+id/imageView25"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/dp18h"
+        android:src="@mipmap/action_bar_logo"
+        app:layout_constraintBottom_toBottomOf="@+id/imageView20"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/imageView20"
+        app:layout_constraintVertical_bias="0.26" />
+    <ImageView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="8dp"
+        android:layout_marginStart="@dimen/dp18w"
+        android:src="@mipmap/back_arrow_black"
+        app:layout_constraintBottom_toBottomOf="@+id/imageView25"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/imageView25"
+        android:onClick="@{ViewModel::back}"/>
+    <TextView
+        android:id="@+id/textView33"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="8dp"
+        android:layout_marginStart="8dp"
+        android:text="هناك حجز جديد"
+        android:textColor="@color/black_color_50opacity"
+        android:textSize="@dimen/sp16_5"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/imageView20" />
+
+    <TextView
+        android:id="@+id/textView35"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/dp35h"
+        android:layout_marginEnd="@dimen/dp15w"
+        android:text="معلومات عن المريض"
+        android:textColor="@color/black_color_50opacity"
+        android:textSize="@dimen/sp16_5"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView33" />
+
+    <TextView
+        android:id="@+id/textView54"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/dp18h"
+        android:layout_marginEnd="@dimen/dp15w"
+        android:drawableEnd="@mipmap/profile_icon"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView35"
+        android:text="@{ViewModel.name}"
+        android:gravity="center"
+        android:drawablePadding="5dp"/>
+
+    <TextView
+        android:id="@+id/textView55"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/dp18h"
+        android:layout_marginEnd="@dimen/dp15w"
+        android:drawableEnd="@mipmap/email_icon"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView54"
+        android:text="@{ViewModel.mail}"
+        android:gravity="center"
+        android:drawablePadding="5dp"/>
+
+    <TextView
+        android:id="@+id/textView56"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/dp18h"
+        android:layout_marginEnd="@dimen/dp15w"
+        android:drawableEnd="@mipmap/phone_icon"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView55"
+        android:text="@{ViewModel.phone}"
+        android:gravity="center"
+        android:drawablePadding="5dp"/>
+
+    <TextView
+        android:layout_width="@dimen/dp293w"
+        android:layout_height="@dimen/dp151h"
+        android:layout_marginTop="@dimen/dp18h"
+        android:background="@drawable/notification_item_background"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView56"
+        android:padding="5dp"
+        android:text="@{ViewModel.comment}"/>
+
+</android.support.constraint.ConstraintLayout>
+</layout>

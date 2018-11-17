@@ -1,0 +1,202 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<layout>
+    <data>
+        <variable
+            name="ViewModel"
+            type="dp.com.tadawy.viewmodel.ReservationViewModel"/>
+    </data>
+<android.support.constraint.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:id="@+id/cl_root">
+
+    <ImageView
+        android:id="@+id/imageView20"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/dp127h"
+        android:scaleType="fitXY"
+        android:src="@mipmap/white_bar"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+    <ImageView
+        android:id="@+id/imageView25"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/dp18h"
+        android:src="@mipmap/action_bar_logo"
+        app:layout_constraintBottom_toBottomOf="@+id/imageView20"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/imageView20"
+        app:layout_constraintVertical_bias="0.26" />
+
+    <ImageView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="8dp"
+        android:layout_marginStart="@dimen/dp18w"
+        android:src="@mipmap/back_arrow_black"
+        app:layout_constraintBottom_toBottomOf="@+id/imageView25"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/imageView25"
+        android:onClick="@{ViewModel::back}"/>
+
+    <TextView
+        android:id="@+id/textView33"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="8dp"
+        android:layout_marginStart="8dp"
+        android:text="ستقوم الان بالحجز لدى"
+        android:textColor="@color/black_color_50opacity"
+        android:textSize="@dimen/sp16_5"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/imageView20" />
+
+    <TextView
+        android:id="@+id/textView34"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="8dp"
+        android:layout_marginStart="8dp"
+        android:text="@{ViewModel.clinicName}"
+        android:textColor="@color/text_color_black"
+        android:textSize="@dimen/sp18"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView33" />
+
+    <TextView
+        android:id="@+id/textView35"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="@dimen/dp17w"
+        android:layout_marginTop="@dimen/dp35h"
+        android:text="معلومات عن المريض"
+        android:textColor="@color/black_color_50opacity"
+        android:textSize="@dimen/sp16_5"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView34" />
+
+    <ImageView
+        android:id="@+id/imageView22"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="@dimen/dp17w"
+        android:layout_marginTop="@dimen/dp24h"
+        android:src="@mipmap/name_icon"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView35" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="@dimen/dp15w"
+        android:layout_marginTop="8dp"
+        android:text="@{ViewModel.name}"
+        android:textColor="@color/text_color_black"
+        android:textSize="@dimen/sp14_5"
+        app:layout_constraintBottom_toBottomOf="@+id/imageView22"
+        app:layout_constraintEnd_toStartOf="@+id/imageView22"
+        app:layout_constraintTop_toTopOf="@+id/imageView22"
+        app:layout_constraintVertical_bias="1.0" />
+
+    <ImageView
+        android:id="@+id/imageView23"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="@dimen/dp17w"
+        android:layout_marginTop="@dimen/dp35h"
+        android:src="@mipmap/email_icon"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/imageView22" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="@dimen/dp15w"
+        android:layout_marginTop="8dp"
+        android:text="@{ViewModel.mail}"
+        android:textColor="@color/text_color_black"
+        android:textSize="@dimen/sp14_5"
+        app:layout_constraintBottom_toBottomOf="@+id/imageView23"
+        app:layout_constraintEnd_toStartOf="@+id/imageView23"
+        app:layout_constraintTop_toTopOf="@+id/imageView23"
+        app:layout_constraintVertical_bias="1.0" />
+
+    <ImageView
+
+        android:id="@+id/imageView24"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="@dimen/dp17w"
+        android:layout_marginTop="@dimen/dp35h"
+        android:src="@mipmap/phone_icon"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/imageView23" />
+
+    <TextView
+        android:id="@+id/textView36"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="@dimen/dp15w"
+        android:layout_marginTop="8dp"
+        android:text="@{ViewModel.phone}"
+        android:textColor="@color/text_color_black"
+        android:textSize="@dimen/sp14_5"
+        app:layout_constraintBottom_toBottomOf="@+id/imageView24"
+        app:layout_constraintEnd_toStartOf="@+id/imageView24"
+        app:layout_constraintTop_toTopOf="@+id/imageView24"
+        app:layout_constraintVertical_bias="1.0" />
+
+    <Button
+        android:id="@+id/button8"
+        android:layout_width="@dimen/dp166w"
+        android:layout_height="@dimen/dp30h"
+        android:layout_marginEnd="8dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="@dimen/dp23h"
+        android:background="@drawable/button_shape"
+        android:backgroundTint="@color/button_color2"
+        android:text="حجز لمريض اخر"
+        android:onClick="@{ViewModel::anthorPatient}"
+        android:textColor="@android:color/white"
+        android:textSize="@dimen/sp12_5"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView36" />
+
+    <Button
+        android:layout_width="@dimen/dp131w"
+        android:layout_height="@dimen/dp30h"
+        android:layout_marginEnd="@dimen/dp17w"
+        android:layout_marginTop="@dimen/dp53h"
+        android:background="@drawable/button_shape"
+        android:text="تأكيد الحجز"
+        android:onClick="@{ViewModel::createReservation}"
+        android:textColor="@android:color/white"
+        android:textSize="@dimen/sp12_5"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/button8" />
+
+    <Button
+        android:layout_width="@dimen/dp131w"
+        android:layout_height="@dimen/dp30h"
+        android:layout_marginStart="@dimen/dp17w"
+        android:layout_marginTop="@dimen/dp53h"
+        android:background="@drawable/button_shape"
+        android:text="إلغاء الحجز"
+        android:onClick="@{ViewModel::cancelReques}"
+        android:textColor="@android:color/white"
+        android:textSize="@dimen/sp12_5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/button8" />
+</android.support.constraint.ConstraintLayout>
+</layout>

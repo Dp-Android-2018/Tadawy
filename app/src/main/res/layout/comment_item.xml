@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    xmlns:bind="http://schemas.android.com/tools">
+    <data>
+        <variable
+            name="ViewModel"
+            type="dp.com.tadawy.viewmodel.CommentItemViewModel"/>
+    </data>
+
+    <android.support.constraint.ConstraintLayout
+        android:id="@+id/cl_root"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/dp63h">
+
+        <de.hdodenhof.circleimageview.CircleImageView
+            android:id="@+id/circleImageView3"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:layout_marginTop="8dp"
+            android:layout_marginEnd="16dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            bind:imageUrl="@{ViewModel.logo}" />
+
+        <RatingBar
+            android:id="@+id/ratingBar3"
+            style="@style/Widget.AppCompat.RatingBar.Small"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:rating="@{ViewModel.rate}"
+            android:theme="@style/RatingBar"
+            app:layout_constraintEnd_toEndOf="@+id/circleImageView3"
+            app:layout_constraintStart_toStartOf="@+id/circleImageView3"
+            app:layout_constraintTop_toBottomOf="@+id/circleImageView3" />
+
+
+        <TextView
+            android:id="@+id/textView42"
+            android:layout_width="@dimen/dp261w"
+            android:layout_height="@dimen/dp36h"
+            android:layout_marginStart="8dp"
+            android:layout_marginEnd="8dp"
+            android:layout_marginBottom="8dp"
+            android:maxLines="2"
+            android:text="@{ViewModel.comment}"
+            app:layout_constraintBottom_toBottomOf="@+id/ratingBar3"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="@+id/circleImageView3"
+            app:layout_constraintVertical_bias="0.3" />
+
+    </android.support.constraint.ConstraintLayout>
+</layout>

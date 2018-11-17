@@ -1,4 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
+<layout>
+    <data>
+        <variable
+            name="ViewModel"
+            type="dp.com.tadawy.viewmodel.PhoneActivationViewModel"/>
+    </data>
 <android.support.constraint.ConstraintLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
@@ -6,10 +12,10 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@android:color/white"
-    tools:context=".view.activity.PhoneActivationActivity">
+   android:id="@+id/cl_root">
 
     <include
-        android:id="@+id/include4"
+        android:id="@+id/action_bar"
         layout="@layout/actionbar_layout" />
 
     <TextView
@@ -22,7 +28,7 @@
         android:textSize="@dimen/sp21_5"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/include4" />
+        app:layout_constraintTop_toBottomOf="@+id/action_bar" />
 
     <TextView
         android:id="@+id/textView6"
@@ -31,7 +37,7 @@
         android:layout_marginEnd="8dp"
         android:layout_marginStart="8dp"
         android:layout_marginTop="8dp"
-        android:hint="123456789"
+        android:text="@{ViewModel.phone}"
         android:textColor="@color/text_color_black"
         android:textSize="@dimen/sp21_5"
         app:layout_constraintEnd_toEndOf="parent"
@@ -49,6 +55,7 @@
         android:textSize="@dimen/sp22_5"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView6" />
-
+        app:layout_constraintTop_toBottomOf="@+id/textView6"
+        android:onClick="@{ViewModel::sendCode}"/>
 </android.support.constraint.ConstraintLayout>
+</layout>

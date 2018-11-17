@@ -15,7 +15,7 @@ import dp.com.tadawy.R;
 import dp.com.tadawy.view.fragment.LoginFragment;
 import dp.com.tadawy.view.fragment.SignupFragment;
 
-public class LoginActivity extends AppCompatActivity {
+public class LoginActivity extends BaseActivity {
     Button login;
     Button signup;
     Fragment loginFragment=new LoginFragment();

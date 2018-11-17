@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout
+    xmlns:bind="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+    <data>
+        <import type="android.view.View"/>
+        <variable
+            name="ViewModel"
+            type="dp.com.tadawy.viewmodel.NotificationViewModel"/>
+    </data>
+    <android.support.constraint.ConstraintLayout
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+        <android.support.v7.widget.RecyclerView
+            android:id="@+id/rv_pend_request"
+            android:layout_marginStart="10dp"
+            android:layout_marginEnd="10dp"
+            android:visibility="@{ViewModel.visibility?View.GONE:View.VISIBLE}"
+            android:layout_marginBottom="5dp"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            tools:listitem="@layout/accept_request_item"
+            bind:reservation="@{ViewModel.reservations}"
+            bind:status="@{ViewModel.status}"/>
+        <ImageView
+            android:id="@+id/imageView9"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="8dp"
+            android:layout_marginTop="8dp"
+            android:layout_marginEnd="8dp"
+            android:visibility="@{ViewModel.visibility?View.VISIBLE:View.GONE}"
+            android:layout_marginBottom="8dp"
+            android:src="@drawable/no_data"
+            bind:layout_constraintBottom_toBottomOf="parent"
+            bind:layout_constraintEnd_toEndOf="parent"
+            bind:layout_constraintStart_toStartOf="parent"
+            bind:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:text="لايوجد بيانات"
+            android:visibility="@{ViewModel.visibility?View.VISIBLE:View.GONE}"
+            android:textColor="@color/text_color_no_data"
+            android:textSize="@dimen/sp20"
+            bind:layout_constraintEnd_toEndOf="@+id/imageView9"
+            bind:layout_constraintStart_toStartOf="@+id/imageView9"
+            bind:layout_constraintTop_toBottomOf="@+id/imageView9" />
+    </android.support.constraint.ConstraintLayout>
+</layout>

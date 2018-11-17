@@ -27,7 +27,7 @@
         app:layout_constraintTop_toTopOf="parent" />
 
     <Button
-        android:id="@+id/button"
+        android:id="@+id/bt_user"
         android:layout_width="@dimen/dp220w"
         android:layout_height="@dimen/dp42h"
         android:layout_marginTop="@dimen/dp55h"
@@ -37,10 +37,11 @@
         android:textSize="@dimen/sp22_5"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView" />
+        app:layout_constraintTop_toBottomOf="@+id/textView"
+        android:onClick="@{SignupViewModel::userRegister}"/>
 
     <Button
-        android:id="@+id/button2"
+        android:id="@+id/bt_company"
         android:layout_width="@dimen/dp220w"
         android:layout_height="@dimen/dp42h"
         android:background="@drawable/button_shape"
@@ -50,7 +51,8 @@
         android:textSize="@dimen/sp22_5"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/button" />
+        app:layout_constraintTop_toBottomOf="@+id/bt_user"
+        android:onClick="@{SignupViewModel::companyRegister}"/>
 
 </android.support.constraint.ConstraintLayout>
 </layout>

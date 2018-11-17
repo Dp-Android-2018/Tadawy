@@ -1,0 +1,249 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout>
+    <data>
+        <import type="dp.com.tadawy.R"/>
+        <variable
+            name="ViewModel"
+            type="dp.com.tadawy.viewmodel.CompanyRegisterCounterViewModel"/>
+    </data>
+<android.support.constraint.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="@dimen/dp299w"
+    android:layout_height="wrap_content"
+    android:layout_gravity="center"
+    android:backgroundTint="@android:color/white"
+    android:background="@drawable/company_register_counter_shape">
+
+    <TextView
+        android:id="@+id/textView43"
+        android:layout_width="@dimen/dp15w"
+        android:layout_height="match_parent"
+        android:layout_marginEnd="@dimen/dp43w"
+        android:background="@drawable/view_number_shape"
+        android:gravity="top|center_horizontal"
+        android:text="1"
+        android:backgroundTint="@{ViewModel.current==1?@color/bt_selected:@color/background_selector}"
+        android:textColor="@android:color/white"
+        android:textSize="@dimen/sp13_5"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+    <ImageView
+        android:id="@+id/img1"
+        android:layout_width="@dimen/dp15w"
+        android:layout_height="0dp"
+        android:visibility="@{ViewModel.img[0]}"
+        android:layout_marginEnd="@dimen/dp43w"
+        android:background="@drawable/view_number_shape"
+        android:backgroundTint="@color/bt_selected"
+        android:src="@mipmap/check_mark"
+        android:scaleType="fitCenter"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent"/>
+
+    <TextView
+        android:id="@+id/textView44"
+        android:layout_width="@dimen/dp15w"
+        android:layout_height="match_parent"
+        android:layout_marginEnd="@dimen/dp13w"
+        android:background="@drawable/view_number_shape"
+        android:gravity="top|center_horizontal"
+        android:text="2"
+        android:backgroundTint="@{ViewModel.current==2?@color/bt_selected:@color/background_selector}"
+        android:textColor="@android:color/white"
+        android:textSize="@dimen/sp13_5"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/textView43"
+        app:layout_constraintTop_toTopOf="parent" />
+    <ImageView
+        android:id="@+id/img2"
+        android:layout_width="@dimen/dp15w"
+        android:layout_height="0dp"
+        android:layout_marginEnd="@dimen/dp13w"
+        android:visibility="@{ViewModel.img[1]}"
+        android:background="@drawable/view_number_shape"
+        android:backgroundTint="@color/bt_selected"
+        android:src="@mipmap/check_mark"
+        android:scaleType="fitCenter"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/textView43"
+        app:layout_constraintTop_toTopOf="parent"/>
+
+    <TextView
+        android:id="@+id/textView45"
+        android:layout_width="@dimen/dp15w"
+        android:layout_height="match_parent"
+        android:layout_marginEnd="@dimen/dp13w"
+        android:background="@drawable/view_number_shape"
+        android:gravity="center"
+        android:text="3"
+        android:backgroundTint="@{ViewModel.current==3?@color/bt_selected:@color/background_selector}"
+        android:textColor="@android:color/white"
+        android:textSize="@dimen/sp13_5"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/textView44"
+        app:layout_constraintTop_toTopOf="parent" />
+    <ImageView
+        android:id="@+id/img3"
+        android:layout_width="@dimen/dp15w"
+        android:layout_height="0dp"
+        android:layout_marginEnd="@dimen/dp13w"
+        android:visibility="@{ViewModel.img[2]}"
+        android:background="@drawable/view_number_shape"
+        android:backgroundTint="@color/bt_selected"
+        android:src="@mipmap/check_mark"
+        android:scaleType="fitCenter"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/textView44"
+        app:layout_constraintTop_toTopOf="parent"/>
+
+    <TextView
+        android:id="@+id/textView47"
+        android:layout_width="@dimen/dp15w"
+        android:layout_height="match_parent"
+        android:layout_marginEnd="@dimen/dp13w"
+        android:background="@drawable/view_number_shape"
+        android:gravity="center"
+        android:text="4"
+        android:backgroundTint="@{ViewModel.current==4?@color/bt_selected:@color/background_selector}"
+        android:textColor="@android:color/white"
+        android:textSize="@dimen/sp13_5"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/textView45"
+        app:layout_constraintTop_toTopOf="parent" />
+    <ImageView
+        android:id="@+id/img4"
+        android:layout_width="@dimen/dp15w"
+        android:layout_height="0dp"
+        android:layout_marginEnd="@dimen/dp13w"
+        android:visibility="@{ViewModel.img[3]}"
+        android:background="@drawable/view_number_shape"
+        android:backgroundTint="@color/bt_selected"
+        android:src="@mipmap/check_mark"
+        android:scaleType="fitCenter"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/textView45"
+        app:layout_constraintTop_toTopOf="parent"/>
+
+    <TextView
+        android:id="@+id/textView46"
+        android:layout_width="@dimen/dp15w"
+        android:layout_height="match_parent"
+        android:layout_marginEnd="@dimen/dp13w"
+        android:background="@drawable/view_number_shape"
+        android:gravity="center"
+        android:text="5"
+        android:backgroundTint="@{ViewModel.current==5?@color/bt_selected:@color/background_selector}"
+        android:textColor="@android:color/white"
+        android:textSize="@dimen/sp13_5"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/textView47"
+        app:layout_constraintTop_toTopOf="parent" />
+    <ImageView
+        android:id="@+id/img5"
+        android:layout_width="@dimen/dp15w"
+        android:layout_height="0dp"
+        android:layout_marginEnd="@dimen/dp13w"
+        android:visibility="@{ViewModel.img[4]}"
+        android:background="@drawable/view_number_shape"
+        android:backgroundTint="@color/bt_selected"
+        android:src="@mipmap/check_mark"
+        android:scaleType="fitCenter"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/textView47"
+        app:layout_constraintTop_toTopOf="parent"/>
+
+    <TextView
+        android:id="@+id/textView49"
+        android:layout_width="@dimen/dp15w"
+        android:layout_height="match_parent"
+        android:layout_marginEnd="@dimen/dp13w"
+        android:background="@drawable/view_number_shape"
+        android:gravity="center"
+        android:text="6"
+        android:backgroundTint="@{ViewModel.current==6?@color/bt_selected:@color/background_selector}"
+        android:textColor="@android:color/white"
+        android:textSize="@dimen/sp13_5"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/textView46"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.0" />
+    <ImageView
+        android:id="@+id/img6"
+        android:layout_width="@dimen/dp15w"
+        android:layout_height="0dp"
+        android:layout_marginEnd="@dimen/dp13w"
+        android:visibility="@{ViewModel.img[5]}"
+        android:backgroundTint="@color/bt_selected"
+        android:background="@drawable/view_number_shape"
+        android:src="@mipmap/check_mark"
+        android:scaleType="fitCenter"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/textView46"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.0" />
+
+    <TextView
+        android:id="@+id/textView50"
+        android:layout_width="@dimen/dp15w"
+        android:layout_height="match_parent"
+        android:layout_marginEnd="@dimen/dp13w"
+        android:background="@drawable/view_number_shape"
+        android:gravity="center"
+        android:text="7"
+        android:backgroundTint="@{ViewModel.current==7?@color/bt_selected:@color/background_selector}"
+        android:textColor="@android:color/white"
+        android:textSize="@dimen/sp13_5"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/textView49"
+        app:layout_constraintTop_toTopOf="parent" />
+    <ImageView
+        android:id="@+id/img7"
+        android:layout_width="@dimen/dp15w"
+        android:layout_height="0dp"
+        android:layout_marginEnd="@dimen/dp13w"
+        android:visibility="@{ViewModel.img[6]}"
+        android:background="@drawable/view_number_shape"
+        android:backgroundTint="@color/bt_selected"
+        android:src="@mipmap/check_mark"
+        android:scaleType="fitCenter"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/textView49"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/textView48"
+        android:layout_width="@dimen/dp15w"
+        android:layout_height="match_parent"
+        android:layout_marginStart="@dimen/dp43w"
+        android:layout_marginEnd="@dimen/dp13w"
+        android:background="@drawable/view_number_shape"
+        android:gravity="center"
+        android:text="8"
+        android:backgroundTint="@{ViewModel.current==8?@color/bt_selected:@color/background_selector}"
+        android:textColor="@android:color/white"
+        android:textSize="@dimen/sp13_5"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/textView50"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <ImageView
+        android:id="@+id/img8"
+        android:layout_width="@dimen/dp15w"
+        android:layout_height="0dp"
+        android:visibility="@{ViewModel.img[7]}"
+        android:layout_marginEnd="@dimen/dp13w"
+        android:layout_marginStart="@dimen/dp43w"
+        android:background="@drawable/view_number_shape"
+        android:backgroundTint="@color/bt_selected"
+        android:src="@mipmap/check_mark"
+        android:scaleType="fitCenter"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/textView50"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"/>
+</android.support.constraint.ConstraintLayout>
+</layout>

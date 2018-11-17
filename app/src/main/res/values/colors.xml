@@ -13,6 +13,21 @@
     <color name="text_color_gray">#c8c8c8</color>
     <color name="text_specialization_color_">#b32e363e</color>
     <color name="recycler_bagground_color">#ededed</color>
+    <color name="black_color_50opacity">#802e363e</color>
+    <color name="pics_color">#e59124</color>
+    <color name="line_color">#80979797</color>
+    <color name="text_color_sky">#6ac5b4</color>
+    <color name="button_color2">#bc6896</color>
+    <color name="back_ground_day">#d8d8d8</color>
+    <color name="country_item_color">#4c4c4c</color>
+    <color name="list_item_strock">#72000000</color>
+    <color name="view_back_ground">#979797</color>
+    <color name="gray_color_50opacity">#80979797</color>
+    <color name="background_selector">#2e363e</color>
+    <color name="black_color_21opacity">#d3d5d7</color>
+    <color name="stroke_color">#c1e7e0</color>
+    <color name="notification_bar_color">#33000000</color>
+    <color name="text_color_no_data">#969a9e</color>
 
 
 </resources>

@@ -1,0 +1,164 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout>
+    <data>
+        <variable
+            name="ViewModel"
+            type="dp.com.tadawy.viewmodel.WorkDayViewModel"/>
+    </data>
+<android.support.constraint.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="@dimen/dp231w"
+    android:layout_height="@dimen/dp137h"
+    android:layout_gravity="center"
+    android:background="@drawable/work_day_shape">
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginEnd="8dp"
+        android:text="@string/morning_shift"
+        android:textColor="@color/background_selector"
+        android:textSize="@dimen/sp9"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/view18"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginEnd="8dp"
+        android:text="@string/night_shift"
+        android:textColor="@color/background_selector"
+        android:textSize="@dimen/sp9"
+        app:layout_constraintEnd_toStartOf="@+id/view18"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/from"
+        android:textColor="@android:color/white"
+        android:textSize="@dimen/sp9"
+        app:layout_constraintBottom_toTopOf="@+id/tv_nfrom"
+        app:layout_constraintEnd_toEndOf="@+id/tv_nfrom"
+        app:layout_constraintStart_toStartOf="@+id/tv_nfrom" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/to"
+        android:textColor="@android:color/white"
+        android:textSize="@dimen/sp9"
+        app:layout_constraintBottom_toTopOf="@+id/tv_nto"
+        app:layout_constraintEnd_toEndOf="@+id/tv_nto"
+        app:layout_constraintStart_toStartOf="@+id/tv_nto" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/from"
+        android:textColor="@android:color/white"
+        android:textSize="@dimen/sp9"
+        app:layout_constraintBottom_toTopOf="@+id/tv_mfrom"
+        app:layout_constraintEnd_toEndOf="@+id/tv_mfrom"
+        app:layout_constraintStart_toStartOf="@+id/tv_mfrom" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/to"
+        android:textColor="@android:color/white"
+        android:textSize="@dimen/sp9"
+        app:layout_constraintBottom_toTopOf="@+id/tv_mto"
+        app:layout_constraintEnd_toEndOf="@+id/tv_mto"
+        app:layout_constraintStart_toStartOf="@+id/tv_mto" />
+
+    <View
+        android:id="@+id/view18"
+        android:layout_width="2dp"
+        android:layout_height="@dimen/dp115h"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginBottom="8dp"
+        android:background="@android:color/white"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/tv_nfrom"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@{ViewModel.nFrom}"
+        android:gravity="center"
+        android:layout_marginBottom="@dimen/dp29h"
+        android:textSize="@dimen/sp9"
+        android:textColor="@android:color/white"
+        android:layout_marginStart="@dimen/dp15w"
+        android:layout_marginEnd="@dimen/dp15w"
+        android:background="@drawable/shift_item_shape"
+        app:layout_constraintBottom_toTopOf="@+id/tv_nto"
+        app:layout_constraintEnd_toStartOf="@+id/view18"
+        app:layout_constraintStart_toStartOf="parent"
+        android:onClick="@{ViewModel::pickTime}"/>
+
+    <TextView
+        android:id="@+id/tv_mfrom"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@{ViewModel.mFrom}"
+        android:gravity="center"
+        android:layout_marginBottom="@dimen/dp29h"
+        android:textSize="@dimen/sp9"
+        android:layout_marginStart="@dimen/dp15w"
+        android:layout_marginEnd="@dimen/dp15w"
+        android:textColor="@android:color/white"
+        android:background="@drawable/shift_item_shape"
+        app:layout_constraintBottom_toTopOf="@+id/tv_mto"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/view18"
+        android:onClick="@{ViewModel::pickTime}"/>
+
+    <TextView
+        android:id="@+id/tv_nto"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@{ViewModel.nTo}"
+        android:gravity="center"
+        android:layout_marginBottom="@dimen/dp20h"
+        android:textSize="@dimen/sp9"
+        android:layout_marginStart="@dimen/dp15w"
+        android:layout_marginEnd="@dimen/dp15w"
+        android:textColor="@android:color/white"
+        android:background="@drawable/shift_item_shape"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/view18"
+        app:layout_constraintStart_toStartOf="parent"
+        android:onClick="@{ViewModel::pickTime}"/>
+
+    <TextView
+        android:id="@+id/tv_mto"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@{ViewModel.mTo}"
+        android:gravity="center"
+        android:layout_marginBottom="@dimen/dp20h"
+        android:layout_marginStart="@dimen/dp15w"
+        android:layout_marginEnd="@dimen/dp15w"
+        android:textSize="@dimen/sp9"
+        android:textColor="@android:color/white"
+        android:background="@drawable/shift_item_shape"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/view18"
+        android:onClick="@{ViewModel::pickTime}"/>
+
+</android.support.constraint.ConstraintLayout>
+</layout>

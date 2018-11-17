@@ -1,0 +1,152 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout>
+    <data>
+        <variable
+            name="ViewModel"
+            type="dp.com.tadawy.viewmodel.CompanyRegisterStep7ViewModel"/>
+    </data>
+<android.support.constraint.ConstraintLayout
+    xmlns:bind="http://schemas.android.com/apk/res-auto"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:background="@drawable/bg_splash">
+    <ImageView
+        android:id="@+id/imageView7"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/dp18h"
+        android:src="@mipmap/action_bar_logo"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <ImageView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/dp15w"
+        android:src="@mipmap/back_arrow"
+        app:layout_constraintBottom_toBottomOf="@+id/imageView7"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/imageView7"
+        android:onClick="@{ViewModel::back}"/>
+
+    <include
+        android:id="@+id/counter"
+        layout="@layout/company_register_counter"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/dp18h"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/imageView7" />
+
+    <Button
+        android:id="@+id/button4"
+        android:layout_width="@dimen/dp297w"
+        android:layout_height="@dimen/dp35h"
+        android:layout_gravity="bottom"
+        android:background="@drawable/button_next_company_register"
+        android:text="@string/next"
+        android:textColor="@android:color/white"
+        android:textSize="@dimen/sp22_5"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/view17"
+        android:onClick="@{ViewModel::next}"/>
+
+    <View
+        android:id="@+id/view17"
+        android:layout_width="@dimen/dp297w"
+        android:layout_height="@dimen/dp383h"
+        android:background="@android:color/white"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/counter" />
+
+    <de.hdodenhof.circleimageview.CircleImageView
+        android:id="@+id/circleImageView2"
+        android:layout_width="@dimen/dp93w"
+        android:layout_height="@dimen/dp94h"
+        android:layout_marginTop="@dimen/dp42h"
+        android:background="@drawable/image_background"
+        android:padding="@dimen/dp5w"
+        android:src="@mipmap/image_add_button"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/counter"
+        bind:bitmap="@{ViewModel.lisiense}"
+        android:onClick="@{ViewModel::uploadImage}"/>
+
+    <TextView
+        android:id="@+id/textView16"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="8dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="8dp"
+        android:text="@string/upload_liciences"
+        android:textColor="@color/text_color_gray"
+        android:textSize="@dimen/sp12"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/circleImageView2" />
+
+    <View
+        android:id="@+id/view6"
+        android:layout_width="@dimen/dp297w"
+        android:layout_height="2dp"
+        android:layout_marginTop="@dimen/dp13h"
+        android:background="@color/text_color_gray"
+        app:layout_constraintEnd_toEndOf="@+id/view17"
+        app:layout_constraintStart_toStartOf="@+id/view17"
+        app:layout_constraintTop_toBottomOf="@+id/textView16" />
+
+    <TextView
+        android:id="@+id/textView17"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="8dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="@dimen/dp12h"
+        android:text="@string/uploade_some_photos"
+        android:textColor="@color/text_color_gray"
+        android:textSize="@dimen/sp12"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/view6" />
+
+    <de.hdodenhof.circleimageview.CircleImageView
+        android:id="@+id/circleImageView"
+        android:layout_width="@dimen/dp93w"
+        android:layout_height="@dimen/dp94h"
+        android:layout_marginEnd="8dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="@dimen/dp7h"
+        android:background="@drawable/image_background"
+        android:padding="@dimen/dp5w"
+        android:src="@mipmap/image_add_button"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.501"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView17"
+        bind:bitmap="@{ViewModel.picBitmap}"
+        android:onClick="@{ViewModel::uploadImage}"/>
+
+    <android.support.v7.widget.RecyclerView
+        android:id="@+id/rv_images"
+        android:layout_width="0dp"
+        android:layout_height="@dimen/dp61h"
+        android:layout_marginStart="5dp"
+        android:layout_marginTop="@dimen/dp10h"
+        android:layout_marginEnd="5dp"
+        android:background="@drawable/recycler_shape"
+        app:layout_constraintEnd_toEndOf="@+id/view17"
+        app:layout_constraintStart_toStartOf="@+id/view17"
+        app:layout_constraintTop_toBottomOf="@+id/circleImageView"
+        tools:listitem="@layout/image_list_item"
+        bind:addprojectrecycler="@{ViewModel.images}"/>
+</android.support.constraint.ConstraintLayout>
+</layout>

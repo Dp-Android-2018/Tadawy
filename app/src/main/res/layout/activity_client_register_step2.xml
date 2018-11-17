@@ -9,22 +9,21 @@
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
-
+    android:layout_height="match_parent"
+    android:id="@+id/cl_root">
     <include
-        android:id="@+id/include2"
+        android:id="@+id/action_bar"
         layout="@layout/actionbar_layout"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
-
     <ImageView
         android:id="@+id/name_icon"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginEnd="@dimen/dp35w"
         android:layout_marginTop="@dimen/dp110h"
-        app:layout_constraintEnd_toEndOf="@+id/include2"
+        app:layout_constraintEnd_toEndOf="@+id/action_bar"
         app:layout_constraintTop_toTopOf="parent"
         app:srcCompat="@mipmap/phone_icon"/>
 
@@ -36,6 +35,7 @@
         android:background="@null"
         android:gravity="center|start"
         android:hint="@string/phone_number"
+        android:text="@={ClientRegisterStep2ViewModel.phone}"
         android:inputType="phone"
         android:paddingEnd="5dp"
         android:paddingStart="5dp"
@@ -74,7 +74,6 @@
         android:background="@null"
         android:gravity="center|start"
         android:hint="@string/country"
-        android:inputType="textEmailAddress"
         android:paddingEnd="5dp"
         android:paddingStart="5dp"
         android:textColor="@color/text_color_black"
@@ -82,7 +81,10 @@
         android:textSize="@dimen/sp14_5"
         app:layout_constraintBottom_toBottomOf="@+id/mail_icon"
         app:layout_constraintEnd_toStartOf="@+id/mail_icon"
-        app:layout_constraintTop_toTopOf="@+id/mail_icon" />
+        app:layout_constraintTop_toTopOf="@+id/mail_icon"
+        android:text="@{ClientRegisterStep2ViewModel.countryName}"
+        android:onClick="@{ClientRegisterStep2ViewModel::getCountries}"
+        />
 
     <View
         android:id="@+id/view2"
@@ -120,7 +122,9 @@
         android:textSize="@dimen/sp14_5"
         app:layout_constraintBottom_toBottomOf="@+id/pass_icon"
         app:layout_constraintEnd_toStartOf="@+id/pass_icon"
-        app:layout_constraintTop_toTopOf="@+id/pass_icon" />
+        app:layout_constraintTop_toTopOf="@+id/pass_icon"
+        android:text="@{ClientRegisterStep2ViewModel.cityName}"
+        android:onClick="@{ClientRegisterStep2ViewModel::getCities}" />
 
     <View
         android:id="@+id/view3"
@@ -143,7 +147,8 @@
         android:textSize="@dimen/sp22_5"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/view3" />
+        app:layout_constraintTop_toBottomOf="@+id/view3"
+        android:onClick="@{ClientRegisterStep2ViewModel::checkData}"/>
 
 
 </android.support.constraint.ConstraintLayout>

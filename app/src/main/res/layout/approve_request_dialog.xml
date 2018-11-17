@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.v7.widget.CardView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    app:cardCornerRadius="10dp">
+
+    <android.support.constraint.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <TextView
+            android:id="@+id/textView53"
+            android:layout_width="@dimen/dp262w"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/dp25w"
+            android:layout_marginTop="@dimen/dp9h"
+            android:layout_marginEnd="@dimen/dp25w"
+            android:gravity="center"
+            android:text="@string/reservation_comment"
+            android:textSize="@dimen/sp9"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <View
+            android:id="@+id/view23"
+            android:layout_width="match_parent"
+            android:layout_height="2dp"
+            android:layout_marginTop="@dimen/dp15h"
+            android:background="@color/view_back_ground"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/textView53" />
+
+        <EditText
+            android:id="@+id/comment"
+            android:layout_width="@dimen/dp293w"
+            android:layout_height="@dimen/dp151h"
+            android:layout_marginTop="@dimen/dp13h"
+            android:background="@drawable/notification_item_background"
+            android:hint="@string/write_comment"
+            android:padding="5dp"
+            android:gravity="start"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/view23" />
+
+        <Button
+            android:id="@+id/exit"
+            android:layout_width="0dp"
+            android:layout_height="@dimen/dp36h"
+            android:layout_marginTop="@dimen/dp12h"
+            android:layout_marginEnd="2dp"
+            android:background="@color/text_color_sky"
+            android:text="الغاء"
+            android:textColor="@android:color/white"
+            android:textSize="@dimen/sp12_5"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toStartOf="@+id/accept"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintHorizontal_chainStyle="packed"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/comment" />
+
+        <Button
+            android:id="@+id/accept"
+            android:layout_width="0dp"
+            android:layout_height="@dimen/dp36h"
+            android:layout_marginStart="3dp"
+            android:layout_marginTop="@dimen/dp12h"
+            android:background="@color/text_color_sky"
+            android:text="إرسال"
+            android:textColor="@android:color/white"
+            android:textSize="@dimen/sp12_5"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toEndOf="@+id/exit"
+            app:layout_constraintTop_toBottomOf="@+id/comment" />
+
+
+    </android.support.constraint.ConstraintLayout>
+</android.support.v7.widget.CardView>

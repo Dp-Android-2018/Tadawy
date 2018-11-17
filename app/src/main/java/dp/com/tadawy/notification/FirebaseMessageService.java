@@ -12,9 +12,15 @@ import android.support.v4.app.NotificationCompat;
 import com.google.firebase.messaging.FirebaseMessagingService;
 import com.google.firebase.messaging.RemoteMessage;
 import dp.com.tadawy.R;
+import dp.com.tadawy.pojo.model.LoginResponseContent;
+import dp.com.tadawy.utils.ConfigurationFile;
+import dp.com.tadawy.utils.CustomUtils;
+import dp.com.tadawy.utils.SharedPrefrenceUtils;
+import dp.com.tadawy.view.activity.MainActivity;
 
 
 public class FirebaseMessageService extends FirebaseMessagingService {
+    private SharedPrefrenceUtils pref;
     @Override
     public void onMessageReceived(RemoteMessage remoteMessage) {
 
@@ -23,8 +29,14 @@ public class FirebaseMessageService extends FirebaseMessagingService {
         System.out.println("Notification Log Title:"+remoteMessage.getNotification().getTitle());
         System.out.println("Notification Log Body:"+remoteMessage.getNotification().getBody());
         System.out.println("Notification Log Data :"+remoteMessage.getData());
+        if(remoteMessage.getNotification().getTitle().equals("Activated successfully")) {
+            LoginResponseContent response=CustomUtils.getInstance().getSaveUserObject(this);
+            response.setStatus(true);
+            saveDataToPrefs(response);
+            Intent i = new Intent(getApplicationContext(),MainActivity.class);
+            Notify(i, remoteMessage.getNotification().getTitle(), remoteMessage.getNotification().getBody());
+        }
     }
-
 
     public void Notify(Intent intent, String messageTitle, String nb) {
         System.out.println("onNotify method : "+messageTitle);
@@ -48,6 +60,10 @@ public class FirebaseMessageService extends FirebaseMessagingService {
         notificationManager.notify(0 /* ID of notification */, notificationBuilder.build());
     }
 
+    public void saveDataToPrefs(LoginResponseContent data){
+        pref=new SharedPrefrenceUtils(this);
+        pref.saveObjectToSharedPreferences(ConfigurationFile.SharedPrefConstants.SHARED_PREF_NAME,data);
+    }
 
 
 }
